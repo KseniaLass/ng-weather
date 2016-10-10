@@ -5,7 +5,7 @@ var myApp = angular.module('myApp', []);
 myApp.controller('currentWeather', function currentWeather($http, $scope) {
     var key = 'dddcd2cbd1d2d744671a9cf971bcf18f'; //Ключ для доступа к серверу
 
-    $scope.requestWeather = function(cityid) { //Запрос к выбраному городу по ID
+    $scope.requestWeather = function(cityid) { //Функция запроса выбранного города по ID
 
         $http.get('http://api.openweathermap.org/data/2.5/weather?id='+cityid+'&appid='+key+'&units=metric').then(function (response) {
             $scope.weather = response.data; //Полученые данные
