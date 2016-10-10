@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body ng-controller="currentWeather" ng-click="closeModal()">
+<div class="container bg">
+        <h1 class="text-center">Current Weather App</h1>
+
+        <div class="for-form">
+            <form ng-submit="submit()" name="cityForm">
+                <fieldset>
+                    <input type="text" class="form-control input-lg" placeholder="Enter your city" ng-model="city" name="city" ng-minlength="3" ng-required="true" ng-change="queryCity()">
+                    <span class="for-icon"><img src="img/search-icon.png" alt=""></span>
+                </fieldset>
+
+                <div class="loader {{loader}}">
+                    <img src="img/loader.gif" alt="">
+                    <span>Search city...</span>
+                </div>
+
+                <ul class="dropdown-list {{search}}">
+
+                    <li ng-repeat="city in cities | limitTo:9" ng-click="requestWeather(city.id)">
+                        <span>{{city.name}}, </span><strong>{{city.sys['country']}}</strong>
+                    </li>
+                </ul>
+
+            </form>
+            <div class="resault {{resault}}">
+                <div class="col-xs-12 col-md-8">
+                    <div class="row">
+                        <h2>{{weather.name}}, <strong>{{weather.sys['country']}}</strong></h2>
+                        <ul>
+                            <li>Humidity: <strong>{{weather.main['humidity']}} %</strong></li>
+                            <li>Pressure: <strong>{{weather.main['pressure']}} mm</strong></li>
+                            <li>Wind: <strong>{{weather.wind['speed']}} m/s</strong></li>
+                            <li>
+                                <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png" alt="">
+                                <span>{{weather.weather[0].main}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="row">
+                        <h3 class="text-center">{{weather.main['temp'] | number:0}}<sup>о</sup>С</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

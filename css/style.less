@@ -1,0 +1,110 @@
+html {
+    height:100%;
+}
+body {
+    background:url(../img/bg.jpg);
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding-top:50px;
+    height:100%;
+    h1 {
+        font-size:40px;
+        color: #fff;
+        font-weight:200;
+        margin-bottom:40px;
+    }
+    .active {
+        display: block !important;
+    }
+    .for-form  {
+        position: relative;
+        form {
+            fieldset {
+                position: relative;
+                input {
+                    border-radius: 0;
+                    &:focus {
+                        border-color: #ccc;
+                        box-shadow: none;
+                    }
+                }
+                .for-icon {
+                    border-radius: 0;
+                    position: absolute;
+                    right:0;
+                    top:0;
+                    padding:8px;
+                    border: 1px solid #ccc;
+                    img {
+                        height:28px;
+                    }
+                }
+            }
+            .loader {
+                background: #efefef;
+                text-align: center;
+                padding: 4px;
+                display: none;
+                position: absolute;
+                width:100%;
+            }
+            .dropdown-list {
+                display: none;
+                background: #eee;
+                background: rgba(238, 238, 238, .9);
+                border: 1px solid #ccc;
+                position: absolute;
+                top: 46px;
+                width: 100%;
+                padding:0;
+                z-index:10;
+                li {
+                    display: block;
+                    width:100%;
+                    height:46px;
+                    line-height:46px;
+                    cursor: pointer;
+                    padding:0 15px;
+                    &:hover {
+                        background: #fff;
+                    }
+                    &.loader {
+                        display: none;
+                        background: #eee;
+                        text-align: center;
+                        cursor: none;
+                    }
+                }
+            }
+            &.ng-invalid-minlength {
+                .dropdown-list {
+                    display: none;
+                }
+            }
+        }
+    }
+    .resault {
+        margin-top:50px;
+        color: #fff;
+        display: none;
+        h2 {
+            color: #fff;
+            font-weight:200;
+            font-size:30px;
+        }
+        h3 {
+            color: #fff;
+            font-weight:200;
+            font-size:100px;
+        }
+        ul {
+            padding:0;
+            li {
+                list-style: none;
+                font-size:16px;
+            }
+        }
+
+    }
+}

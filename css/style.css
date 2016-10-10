@@ -1,0 +1,105 @@
+html {
+  height: 100%;
+}
+body {
+  background: url(../img/bg.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  height: 100%;
+}
+body h1 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+body .active {
+  display: block !important;
+}
+body .for-form {
+  position: relative;
+}
+body .for-form form fieldset {
+  position: relative;
+}
+body .for-form form fieldset input {
+  border-radius: 0;
+}
+body .for-form form fieldset input:focus {
+  border-color: #ccc;
+  box-shadow: none;
+}
+body .for-form form fieldset .for-icon {
+  border-radius: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+body .for-form form fieldset .for-icon img {
+  height: 28px;
+}
+body .for-form form .loader {
+  background: #efefef;
+  text-align: center;
+  padding: 4px;
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+body .for-form form .dropdown-list {
+  display: none;
+  background: #eee;
+  background: rgba(238, 238, 238, 0.9);
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 46px;
+  width: 100%;
+  padding: 0;
+  z-index: 10;
+}
+body .for-form form .dropdown-list li {
+  display: block;
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  cursor: pointer;
+  padding: 0 15px;
+}
+body .for-form form .dropdown-list li:hover {
+  background: #fff;
+}
+body .for-form form .dropdown-list li.loader {
+  display: none;
+  background: #eee;
+  text-align: center;
+  cursor: none;
+}
+body .for-form form.ng-invalid-minlength .dropdown-list {
+  display: none;
+}
+body .resault {
+  margin-top: 50px;
+  color: #fff;
+  display: none;
+}
+body .resault h2 {
+  color: #fff;
+  font-weight: 200;
+  font-size: 30px;
+}
+body .resault h3 {
+  color: #fff;
+  font-weight: 200;
+  font-size: 100px;
+}
+body .resault ul {
+  padding: 0;
+}
+body .resault ul li {
+  list-style: none;
+  font-size: 16px;
+}
