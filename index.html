@@ -11,29 +11,34 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body ng-controller="currentWeather" ng-click="closeModal()">
-<div class="container bg">
+    <div class="container">
         <h1 class="text-center">Current Weather App</h1>
 
         <div class="for-form">
+            <!--Форма поиска-->
             <form ng-submit="submit()" name="cityForm">
+                <!--Поле ввода города-->
                 <fieldset>
                     <input type="text" class="form-control input-lg" placeholder="Enter your city" ng-model="city" name="city" ng-minlength="3" ng-required="true" ng-change="queryCity()">
                     <span class="for-icon"><img src="img/search-icon.png" alt=""></span>
                 </fieldset>
-
+                <!--//Поле ввода города-->
+                <!--Иконка поиска-->
                 <div class="loader {{loader}}">
                     <img src="img/loader.gif" alt="">
                     <span>Search city...</span>
                 </div>
-
+                <!--//Иконка поиска-->
+                <!--Список доступных городов-->
                 <ul class="dropdown-list {{search}}">
-
                     <li ng-repeat="city in cities | limitTo:9" ng-click="requestWeather(city.id)">
                         <span>{{city.name}}, </span><strong>{{city.sys['country']}}</strong>
                     </li>
                 </ul>
-
+                <!--//Список доступных городов-->
             </form>
+            <!--//Форма поиска-->
+            <!--Результаты поиска-->
             <div class="resault {{resault}}">
                 <div class="col-xs-12 col-md-8">
                     <div class="row">
@@ -55,8 +60,9 @@
                     </div>
                 </div>
             </div>
+            <!--//Результаты поиска-->
         </div>
-</div>
+    </div>
 
 </body>
 </html>
